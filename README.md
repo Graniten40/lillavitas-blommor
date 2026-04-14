@@ -1,73 +1,75 @@
-# React + TypeScript + Vite
+# Lillavitas Blommor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive florist website built with React, TypeScript and Vite.
 
-Currently, two official plugins are available:
+The project is designed for a local flower shop and includes a customer order request form, contact section, privacy policy page, email integration, and basic spam protection.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Responsive landing page
+- Order request form
+- Email sending with EmailJS
+- Privacy policy page
+- GDPR consent checkbox
+- Basic spam protection
+  - honeypot field
+  - submit timing check
+  - simple link filtering
+- Contact section with Google Maps embed
+- Footer with social media links
+- Routing with React Router
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- TypeScript
+- Vite
+- Tailwind utility classes
+- EmailJS
+- React Router DOM
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Project Purpose
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+This project was built as a practical frontend case for a florist business website.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+The goal was to create a clean and modern website where customers can:
+- read about the business
+- browse visual inspiration
+- send order requests online
+- access contact details easily
+- read the privacy policy before submitting personal data
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Pages
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Home** — landing page, gallery, contact section, and form
+- **Privacy Policy** — GDPR/integrity policy page
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Form Functionality
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The order request form includes:
+
+- customer name
+- phone number
+- email
+- preferred date
+- order type
+- budget
+- recipient
+- delivery method
+- preferred contact method
+- card message
+- extra request details
+
+Before submission, the form also checks:
+
+- whether the hidden honeypot field is empty
+- whether the form was submitted too quickly
+- whether the message contains too many links
+- whether the user accepted the privacy policy
+
+## Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Graniten40/lillavitas-blommor.git
